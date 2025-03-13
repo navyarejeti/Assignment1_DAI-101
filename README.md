@@ -18,7 +18,6 @@ The **Melbourne Housing dataset** contains real estate data from Melbourne, Aust
 
 4. **Standardizing Categorical Values:**
    - Inconsistent category labels (such as typos or mixed letter cases) were standardized.
-   - Categories like `Type` (h, u, t) were mapped to their full descriptions (`house`, `unit`, `townhouse`).
 
 5. **Handling Outliers:**
    - Outliers in numerical columns such as `Price`, `Landsize`, and `BuildingArea` were detected using the **Interquartile Range (IQR) method** and either capped or replaced with the median.
