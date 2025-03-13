@@ -1,52 +1,52 @@
 # Assignment1_DAI-101
-Data Cleaning and Exploratory Data Analysis (EDA) - Melbourne Housing Dataset
+# Melbourne Housing Data Cleaning and Exploratory Data Analysis (EDA)
 
-This project involves data cleaning and exploratory data analysis (EDA) on a housing dataset. The goal is to preprocess the dataset by handling missing values, detecting and treating outliers, normalizing categorical values, and analyzing relationships between different variables.
+## Dataset Overview
+The **Melbourne Housing dataset** contains real estate data from Melbourne, Australia. The dataset includes details such as property location, price, number of rooms, type, method of sale, and various geographical and structural attributes.
 
-Data Cleaning Steps
+## Data Cleaning Steps
+1. **Handling Missing Values:**
+   - Columns with a significant amount of missing data were either removed or imputed.
+   - Numerical columns such as `BuildingArea`, `Landsize`, and `Price` were imputed using the **median** to avoid skewness.
+   - Categorical columns such as `Suburb` were filled using the **mode**.
+   
+2. **Detecting and Removing Duplicates:**
+   - Duplicate rows were identified and removed to maintain dataset integrity.
 
-Handling Missing Values
-Numerical missing values were filled using the median (skewed data).
-Categorical missing values were filled using the mode (most frequent category).
-Some missing values in specific columns were inferred based on regional trends.
+3. **Fixing Date Formats:**
+   - The `Date` column contained inconsistent date formats, which were standardized using `pd.to_datetime()` with the appropriate format.
 
-Fixing Data Inconsistencies
-Standardized categorical values by correcting typos and formatting inconsistencies.
-Checked for duplicate records and removed them if necessary.
+4. **Standardizing Categorical Values:**
+   - Inconsistent category labels (such as typos or mixed letter cases) were standardized.
+   - Categories like `Type` (h, u, t) were mapped to their full descriptions (`house`, `unit`, `townhouse`).
 
-Outlier Detection and Treatment
-Used boxplots and IQR (Interquartile Range) method to detect outliers.
-Outliers were replaced with the median to maintain data integrity.
+5. **Handling Outliers:**
+   - Outliers in numerical columns such as `Price`, `Landsize`, and `BuildingArea` were detected using the **Interquartile Range (IQR) method** and either capped or replaced with the median.
 
-Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
+1. **Summary Statistics:**
+   - Calculated **mean, median, mode, variance, skewness**, and other statistical measures for numerical columns.
 
-Summary Statistics
-Mean, median, mode, variance, standard deviation, skewness, and kurtosis were calculated to understand data distribution.
+2. **Distribution Analysis:**
+   - **Histograms and Box Plots** were used to visualize the distribution of `Price`, `Landsize`, and `Rooms`.
 
-Visualizations for Single Variables
-Histograms and box plots were used to analyze the distribution of numerical variables.
-Bar charts were plotted for categorical variables to observe frequency distributions.
+3. **Bivariate Analysis:**
+   - **Correlation Matrix & Heatmap**: Showed relationships between numerical variables such as `Rooms`, `Price`, `Landsize`, and `PropertyCount`.
+   - **Scatter Plots**: Explored relationships like `Price vs. Distance` and `Price vs. Rooms`.
+   - **Box Plots & Violin Plots**: Compared categorical variables (`Type`, `Regionname`) with numerical values like `Price`.
 
-Bivariate Analysis
-Correlation matrix & heatmap: Used to identify relationships between numerical variables.
-Scatter plots: Explored relationships between variables like Price and Land Size.
-Bar plots, violin plots, and box plots: Compared numerical and categorical variables.
+## Key Observations
+- Properties with more rooms and larger land sizes generally had higher prices, as expected.
+- **Price and Distance from the city center showed a weak negative correlation**, meaning properties closer to the city tend to be more expensive.
+- Some attributes like `BuildingArea` had significant missing values, making imputation necessary.
+- `PropertyCount` values were closely tied to the `Regionname`, indicating region-based differences in housing density.
 
-Multivariate Analysis
-Pair plots: Visualized multiple relationships simultaneously.
-Grouped comparisons: Identified combined effects of multiple features like Rooms, Price, and Distance.
+## Conclusion
+Through data cleaning and EDA, the dataset was transformed into a more structured and usable form, removing inconsistencies and identifying key patterns in Melbourne’s real estate market.
 
-Key Observations
+---
 
-Correlation Analysis:
-Highly correlated features indicate potential multicollinearity, affecting predictive modeling.
-Price and Number of Rooms showed a strong positive correlation.
-Latitude and Longitude had no correlation with property price, implying location may need new meaningful variables.
-
-Missing Values & Distribution:
-Certain attributes had a high percentage of missing values, which were handled accordingly.
-Some categorical variables were imbalanced, requiring sampling adjustments in future modeling.
-
-Outlier Impact:
-Large property sizes and extreme prices were identified as outliers.
-Imputing extreme values with the median helped stabilize the dataset.
+### Next Steps:
+- Perform feature engineering to create new insights.
+- Train predictive models for price estimation.
+- Conduct time-series analysis to observe market trends over the years.
