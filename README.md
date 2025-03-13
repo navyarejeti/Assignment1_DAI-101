@@ -44,8 +44,3 @@ The **Melbourne Housing dataset** contains real estate data from Melbourne, Aust
 Through data cleaning and EDA, the dataset was transformed into a more structured and usable form, removing inconsistencies and identifying key patterns in Melbourne’s real estate market.
 
 ---
-
-### Next Steps:
-- Perform feature engineering to create new insights.
-- Train predictive models for price estimation.
-- Conduct time-series analysis to observe market trends over the years.
