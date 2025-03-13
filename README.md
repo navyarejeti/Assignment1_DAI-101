@@ -36,7 +36,7 @@ Multivariate Analysis
 Pair plots: Visualized multiple relationships simultaneously.
 Grouped comparisons: Identified combined effects of multiple features like Rooms, Price, and Distance.
 
-🔹 Key Observations
+Key Observations
 
 Correlation Analysis:
 Highly correlated features indicate potential multicollinearity, affecting predictive modeling.
@@ -50,9 +50,3 @@ Some categorical variables were imbalanced, requiring sampling adjustments in fu
 Outlier Impact:
 Large property sizes and extreme prices were identified as outliers.
 Imputing extreme values with the median helped stabilize the dataset.
-
-Future Steps
-Feature engineering to create new meaningful variables (e.g., price per square meter).
-Data transformation techniques such as log transformation for highly skewed variables.
-Further analysis on regional trends affecting property prices.
-
